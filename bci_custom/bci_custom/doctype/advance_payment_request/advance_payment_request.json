@@ -1,0 +1,276 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-11-29 00:51:20.707949",
+ "custom": 1,
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "company",
+  "date",
+  "column_break_9rhjl",
+  "sales_order",
+  "project",
+  "customer",
+  "section_break_uaexf",
+  "attention",
+  "total_already_paid_amount",
+  "request_details_section",
+  "column_break_iyx4g",
+  "total_amount_due",
+  "section_break_a1ye2",
+  "payments_already_received",
+  "details",
+  "section_break_y7whd",
+  "commercials_section",
+  "amount_before_vat",
+  "vat_amount",
+  "column_break_ui4j1",
+  "amount_after_vat",
+  "percentage",
+  "requested_now",
+  "total_amount_requested",
+  "section_break_jqaw1",
+  "bank",
+  "bank_details",
+  "column_break_ehajg",
+  "narration",
+  "amended_from",
+  "inspection_request"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PPR-.YYYY.-"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_9rhjl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "project.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_uaexf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "project.customer",
+   "fieldname": "attention",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Attention",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_already_paid_amount",
+   "fieldtype": "Currency",
+   "label": "Total Already Paid Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "request_details_section",
+   "fieldtype": "Section Break",
+   "label": "Request Details"
+  },
+  {
+   "fieldname": "column_break_iyx4g",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount_due",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total Amount Due(By Daily Project Progress)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_a1ye2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payments_already_received",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Payments Already Received",
+   "options": "Payments Already Received"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Progressive Payment Request Details"
+  },
+  {
+   "fieldname": "section_break_y7whd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "commercials_section",
+   "fieldtype": "Section Break",
+   "label": "Commercials"
+  },
+  {
+   "default": "0",
+   "fieldname": "amount_before_vat",
+   "fieldtype": "Float",
+   "label": "Amount Before Vat",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "vat_amount",
+   "fieldtype": "Float",
+   "label": "VAT Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ui4j1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "amount_after_vat",
+   "fieldtype": "Float",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Float",
+   "ignore_user_permissions": 1,
+   "label": "Percentage"
+  },
+  {
+   "fieldname": "requested_now",
+   "fieldtype": "Float",
+   "ignore_user_permissions": 1,
+   "label": "Requested Now",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount_requested",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total Amount Recieved",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jqaw1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fetch_from": "bank.terms",
+   "fieldname": "bank_details",
+   "fieldtype": "Text Editor",
+   "label": "Bank Details"
+  },
+  {
+   "fieldname": "column_break_ehajg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "narration",
+   "fieldtype": "Text Editor",
+   "label": "Narration"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Progressive Payment Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "inspection_request",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Project Inspection Request",
+   "options": "Project Inspection Request"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-29 11:23:13.308481",
+ "modified_by": "Administrator",
+ "module": "Bci Custom",
+ "name": "Advance Payment Request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

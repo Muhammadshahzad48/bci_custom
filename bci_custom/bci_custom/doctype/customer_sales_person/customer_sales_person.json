@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:sales_person_name",
+ "creation": "2025-12-01 00:23:37.597566",
+ "custom": 1,
+ "default_view": "List",
+ "description": "All Sales Transactions can be tagged against multiple **Sales Persons** so that you can set and monitor targets.",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "name_and_employee_id",
+  "sales_person_name",
+  "is_group",
+  "enabled",
+  "cb0",
+  "customer",
+  "telephone_no",
+  "iban",
+  "department",
+  "lft",
+  "rgt",
+  "target_details_section_break",
+  "targets"
+ ],
+ "fields": [
+  {
+   "fieldname": "name_and_employee_id",
+   "fieldtype": "Section Break",
+   "label": "Sales Person Name and Customer",
+   "options": "icon-user"
+  },
+  {
+   "fieldname": "sales_person_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sales Person Name",
+   "oldfieldname": "sales_person_name",
+   "oldfieldtype": "Data",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Group",
+   "oldfieldname": "is_group",
+   "oldfieldtype": "Select",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "cb0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "telephone_no",
+   "fieldtype": "Data",
+   "label": "Telephone No."
+  },
+  {
+   "fieldname": "iban",
+   "fieldtype": "Data",
+   "label": "Iban"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "lft",
+   "no_copy": 1,
+   "oldfieldname": "lft",
+   "oldfieldtype": "Int",
+   "print_hide": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "rgt",
+   "no_copy": 1,
+   "oldfieldname": "rgt",
+   "oldfieldtype": "Int",
+   "print_hide": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "target_details_section_break",
+   "fieldtype": "Section Break",
+   "label": "Sales Person Targets",
+   "oldfieldtype": "Section Break",
+   "options": "icon-bullseye"
+  },
+  {
+   "fieldname": "targets",
+   "fieldtype": "Table",
+   "label": "Customer Sales Team",
+   "oldfieldname": "target_details",
+   "oldfieldtype": "Table",
+   "options": "Customer Sales Team"
+  }
+ ],
+ "grid_page_length": 50,
+ "icon": "icon-user",
+ "links": [],
+ "modified": "2025-12-02 10:47:19.322239",
+ "modified_by": "Administrator",
+ "module": "Bci Custom",
+ "name": "Customer Sales Person",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "states": []
+}

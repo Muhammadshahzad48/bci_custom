@@ -1,0 +1,237 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-25 15:15:28.043964",
+ "custom": 1,
+ "default_print_format": "Official Salary Deduction Notice",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "iqama_id",
+  "reason_for_deduction",
+  "violation_type",
+  "occurrence_no",
+  "penalty_type",
+  "percentage_deduction",
+  "deduction_value",
+  "violation_amount",
+  "deduction_amount_loan_amount",
+  "number_of_installments",
+  "monthly_deduction",
+  "deduction_start_date",
+  "remarks",
+  "attachment",
+  "status_section",
+  "status",
+  "paid_installments",
+  "paid_amount",
+  "remaining_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.iqama_no",
+   "fieldname": "iqama_id",
+   "fieldtype": "Data",
+   "label": "Iqama ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason_for_deduction",
+   "fieldtype": "Select",
+   "label": "Reason for Deduction",
+   "options": "\nLoan\nViolations \u2013 Arabic\nViolations \u2013 English\nIqama Transfer Fees\nOthers",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "fieldname": "violation_type",
+   "fieldtype": "Link",
+   "label": "Violation Type",
+   "mandatory_depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "options": "Violation Type"
+  },
+  {
+   "depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "fieldname": "occurrence_no",
+   "fieldtype": "Select",
+   "label": "Occurrence No",
+   "mandatory_depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "options": "\nFirst\nSecond\nThird\nFourth",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "fieldname": "penalty_type",
+   "fieldtype": "Check",
+   "label": "Full Day Deduction",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "fieldname": "percentage_deduction",
+   "fieldtype": "Check",
+   "label": "Percentage Deduction",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "fieldname": "deduction_value",
+   "fieldtype": "Float",
+   "label": "Number of Days Deduction",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "fieldname": "violation_amount",
+   "fieldtype": "Percent",
+   "label": "Violation Percentage",
+   "mandatory_depends_on": "eval: [\"Violations \u2013 Arabic\",\"Violations \u2013 English\"].includes(doc.reason_for_deduction)\r\n",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "deduction_amount_loan_amount",
+   "fieldtype": "Currency",
+   "label": "Deduction Amount (Loan Amount)"
+  },
+  {
+   "fieldname": "number_of_installments",
+   "fieldtype": "Int",
+   "label": "Number of Installments"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "monthly_deduction",
+   "fieldtype": "Currency",
+   "label": "Monthly Deduction",
+   "read_only": 1
+  },
+  {
+   "fieldname": "deduction_start_date",
+   "fieldtype": "Date",
+   "label": "Deduction Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nCompleted\nCancelled\nWarning\nPenalty",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "paid_installments",
+   "fieldtype": "Int",
+   "label": "Paid Installments",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remaining_amount",
+   "fieldtype": "Currency",
+   "label": "Remaining Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Loan and Deduction",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-04 16:53:19.681263",
+ "modified_by": "Administrator",
+ "module": "Bci Custom",
+ "name": "Employee Loan and Deduction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

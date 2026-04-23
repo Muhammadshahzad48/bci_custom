@@ -20,7 +20,11 @@ app_license = "mit"
 # 		"has_permission": "bci_custom.api.permission.has_app_permission"
 # 	}
 # ]
-
+fixtures = [
+    "Custom Field",
+    "Property Setter",
+    "Print Format"
+]
 # Includes in <head>
 # ------------------
 

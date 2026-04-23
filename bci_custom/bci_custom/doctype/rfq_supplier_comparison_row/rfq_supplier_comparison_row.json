@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-17 23:58:52.669105",
+ "custom": 1,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "row_label",
+  "supplier_1",
+  "supplier_2",
+  "supplier_3",
+  "supplier_4",
+  "supplier_5"
+ ],
+ "fields": [
+  {
+   "fieldname": "row_label",
+   "fieldtype": "Data",
+   "label": "Row Label"
+  },
+  {
+   "fieldname": "supplier_1",
+   "fieldtype": "Data",
+   "label": "Supplier 1"
+  },
+  {
+   "fieldname": "supplier_2",
+   "fieldtype": "Data",
+   "label": "Supplier 2"
+  },
+  {
+   "fieldname": "supplier_3",
+   "fieldtype": "Data",
+   "label": "Supplier 3"
+  },
+  {
+   "fieldname": "supplier_4",
+   "fieldtype": "Data",
+   "label": "Supplier 4"
+  },
+  {
+   "fieldname": "supplier_5",
+   "fieldtype": "Data",
+   "label": "Supplier 5"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-17 23:58:52.669105",
+ "modified_by": "Administrator",
+ "module": "Bci Custom",
+ "name": "RFQ Supplier Comparison Row",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
